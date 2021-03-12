@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta class="themeColor" name="theme-color" content="#3d375c">
+   <link rel="icon" type="image/png" href="assets/images/favicon.png"/>
+   <link rel="stylesheet" href="assets/reset.css">
+   <link rel="stylesheet" href="assets/style.css">
+   <link rel="manifest" href="assets/manifest.json">
+   <script src="assets/script.js" defer></script>
+   <title>Pearl Pairing</title>
+</head>
+<body>
+   <header id="stats">
+      <section id="start" class="active">
+         <label class="switch">
+            <input type="radio" name="depth" checked onclick="depth != 4 ? (depth=4,setup()) : ''; document.querySelector('footer').classList.remove('active')">
+            <span class="btn">4 × 4</span>
+         </label >
+         <label class="switch">
+            <input type="radio" name="depth" onclick="depth != 6 ? (depth=6,setup()) : ''; document.querySelector('footer').classList.remove('active')">
+            <span class="btn">6 × 6</span>
+         </label>
+         <label class="switch">
+            <input type="radio" name="depth" onclick="depth != 8 ? (depth=8,setup()) : ''; document.querySelector('footer').classList.remove('active')">
+            <span class="btn">8 × 8</span>
+         </label>
+         <label class="switch about ">
+            <input type="radio" name="depth" onclick="document.querySelector('footer').classList.add('active')">
+            <span class="btn btn-1">About</span>
+         </label>
+         <button class="btn btn-1 add-button">INSTALL</button>
+      </section>
+      <section id="play">
+         <div id="time"><span>00</span><b>:</b><span>00</span></div>
+         <button id="reset" class="btn btn-1" onclick="play = false; setup()">RESET</button>
+      </section>
+   </header>
+   <ul id="board"></ul>
+   <footer>
+      <section id="logo">
+         <img src="assets/images/icon.svg" alt="Pearl Pairing">
+         <p class="text">Find match pearl to pair them as fast as you can.<br>Pearl Pairing is a little fun open source project. Have fun and be creative.</p>
+      </section>
+      <section id="info">
+         <a class="text" href="http://behnamazizi.com" target="_blank" title="Behnam Azizi">About Me</a>
+         <a class="text" href="http://behnamazizi.com" target="_blank" title="Github">Github</a>
+      </section>
+   </footer>
+   <style id="additional"></style>
+</body>
+</html>
