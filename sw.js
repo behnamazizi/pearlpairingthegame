@@ -1,21 +1,21 @@
 self.addEventListener('install', (e) => {
     e.waitUntil(
         caches.open('v1.1').then((cache) => cache.addAll([
-            '/',
-            '/index.html',
-            '/assets/reset.css',
-            '/assets/style.css',
-            '/assets/script.js',
-            '/assets/fonts/Bungee-Regular.woff2',
-            '/assets/images/ball-0-b.svg',
-            '/assets/images/ball-0-sh.svg',
-            '/assets/images/ball-1-b.svg',
-            '/assets/images/ball-1-sh.svg',
-            '/assets/images/ball-2-b.svg',
-            '/assets/images/ball-2-sh.svg',
-            '/assets/images/base-0.svg',
-            '/assets/images/base-1.svg',
-            '/assets/images/icon.svg',
+            '/pearlpairingthegame/',
+            '/pearlpairingthegame/index.html',
+            '/pearlpairingthegame/assets/reset.css',
+            '/pearlpairingthegame/assets/style.css',
+            '/pearlpairingthegame/assets/script.js',
+            '/pearlpairingthegame/assets/fonts/Bungee-Regular.woff2',
+            '/pearlpairingthegame/assets/images/ball-0-b.svg',
+            '/pearlpairingthegame/assets/images/ball-0-sh.svg',
+            '/pearlpairingthegame/assets/images/ball-1-b.svg',
+            '/pearlpairingthegame/assets/images/ball-1-sh.svg',
+            '/pearlpairingthegame/assets/images/ball-2-b.svg',
+            '/pearlpairingthegame/assets/images/ball-2-sh.svg',
+            '/pearlpairingthegame/assets/images/base-0.svg',
+            '/pearlpairingthegame/assets/images/base-1.svg',
+            '/pearlpairingthegame/assets/images/icon.svg',
         ]))
     )
 });
