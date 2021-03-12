@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('sw.js', {
-            scope: '/'
+            scope: '/pearlpairingthegame/'
         }).then(function (reg) {
 
             if (reg.installing) {
