@@ -9,8 +9,8 @@
     "display": "standalone",
     "orientation": "portrait-primary",
     "background_color": "#3d375c",
+    "theme_color": "#3d375c",
     "categories": ["games"],
-    "maskable":false,
     "icons": [{
         "src": "images/icon_48.png",
         "sizes": "48x48",
@@ -38,6 +38,10 @@
     }, {
         "src": "images/icon_256.png",
         "sizes": "256x256",
+        "type": "image/png"
+    },{
+        "src": "images/icon_512.png",
+        "sizes": "512x512",
         "type": "image/png"
     }],
     "screenshots" : [
