@@ -1,6 +1,6 @@
 self.addEventListener('install', (e) => {
     e.waitUntil(
-        caches.open('v1.2').then((cache) => cache.addAll([
+        caches.open('v1.3').then((cache) => cache.addAll([
             '/pearlpairingthegame/',
             '/pearlpairingthegame/index.html',
             '/pearlpairingthegame/assets/reset.css',
