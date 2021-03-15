@@ -1,4 +1,4 @@
-const CacheName = '20_53_15_Mar_21';
+const CacheName = '21_05_15_Mar_21';
 //  /pearlpairingthegame
 const assets = [
     '/pearlpairingthegame/',
