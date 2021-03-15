@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta class="themeColor" name="theme-color" content="#3d375c">
    <meta name="Description" content="A PWA Game _ Find match pearl to pair them as fast as you can.">
-   <link rel="icon" type="image/png" href="assets/images/favicon.png"/>
-   <link rel="apple-touch-icon" href="assets/images/icon_192.png"> 
+   <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+   <link rel="apple-touch-icon" href="assets/images/icon_192.png">
    <link rel="stylesheet" href="assets/reset.css">
    <link rel="stylesheet" href="assets/style.css">
    <link rel="manifest" href="assets/manifest.json">
    <script src="assets/script.js" defer></script>
    <title>Pearl Pairing</title>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WCT4M2L4PD"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WCT4M2L4PD');
+   </script>
 </head>
+
 <body>
    <header id="stats">
       <section id="start" class="active">
          <label class="switch">
-            <input type="radio" name="depth" checked onclick="depth != 4 ? (depth=4,setup()) : ''; document.querySelector('footer').classList.remove('active')">
+            <input type="radio" name="depth" checked
+               onclick="depth != 4 ? (depth=4,setup()) : ''; document.querySelector('footer').classList.remove('active')">
             <span class="btn">4 × 4</span>
-         </label >
+         </label>
          <label class="switch">
-            <input type="radio" name="depth" onclick="depth != 6 ? (depth=6,setup()) : ''; document.querySelector('footer').classList.remove('active')">
+            <input type="radio" name="depth"
+               onclick="depth != 6 ? (depth=6,setup()) : ''; document.querySelector('footer').classList.remove('active')">
             <span class="btn">6 × 6</span>
          </label>
          <label class="switch">
-            <input type="radio" name="depth" onclick="depth != 8 ? (depth=8,setup()) : ''; document.querySelector('footer').classList.remove('active')">
+            <input type="radio" name="depth"
+               onclick="depth != 8 ? (depth=8,setup()) : ''; document.querySelector('footer').classList.remove('active')">
             <span class="btn">8 × 8</span>
          </label>
          <label class="switch about ">
@@ -43,14 +56,18 @@
    <footer>
       <section id="logo">
          <img src="assets/images/icon.svg" alt="Pearl Pairing" width="200" height="200">
-         <p class="text">Find match pearl to pair them as fast as you can.<br>Pearl Pairing is a little fun open source project. Have fun and be creative.</p>
+         <p class="text">Find match pearl to pair them as fast as you can.<br>Pearl Pairing is a little fun open source
+            project. Have fun and be creative.</p>
       </section>
       <section id="info">
-         <a class="text" href="http://behnamazizi.com" rel="noreferrer" target="_blank" title="Behnam Azizi">About Me</a>
-         <a class="text" href="https://github.com/behnamazizi/pearlpairingthegame" rel="noreferrer" target="_blank" title="Github">Github</a>
+         <a class="text" href="http://behnamazizi.com" rel="noreferrer" target="_blank" title="Behnam Azizi">About
+            Me</a>
+         <a class="text" href="https://github.com/behnamazizi/pearlpairingthegame" rel="noreferrer" target="_blank"
+            title="Github">Github</a>
       </section>
    </footer>
    <style id="additional"></style>
 
 </body>
+
 </html>
