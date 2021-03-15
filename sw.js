@@ -1,4 +1,5 @@
-const CacheName = '20_38_15_Mar_21';
+const CacheName = '20_53_15_Mar_21';
+//  /pearlpairingthegame
 const assets = [
     '/pearlpairingthegame/',
     '/pearlpairingthegame/index.html',
@@ -19,10 +20,8 @@ const assets = [
 
 // install event
 self.addEventListener('install', evt => {
-  console.log('service worker installed');
   evt.waitUntil(
     caches.open(CacheName).then((cache) => {
-      console.log('caching...');
       cache.addAll(assets);
     })
   );

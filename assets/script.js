@@ -10,11 +10,9 @@ let ww, wh, timer_0, timer_1, timer_2,
 
 document.addEventListener('DOMContentLoaded', () => {
 
-
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js', {
-            scope: '/pearlpairingthegame/'
-        }).then(function (reg) {
+        navigator.serviceWorker.register('sw.js', {scope: '/pearlpairingthegame/'})
+        .then(function (reg) {
             if (reg.installing) {
                 console.log('Service worker installing');
             } else if (reg.waiting) {
@@ -22,16 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (reg.active) {
                 console.log('Service worker active');
             }
-
-        }).catch(function (error) {
+        })
+        .catch(function (error) {
             console.log('Registration failed with ' + error);
         });
     }
-
-
-
-
-
 
     timer_2 = window.requestAnimationFrame(() => {
         getComputedStyle(document.body).getPropertyValue("width").slice(0, -2) != 0 ? setup() : ''
