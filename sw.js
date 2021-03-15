@@ -1,4 +1,4 @@
-const CacheName = '20_27_15_Mar_21';
+const CacheName = '20_30_15_Mar_21';
 const assets = [
     '/pearlpairingthegame/',
     '/pearlpairingthegame/index.html',
@@ -38,6 +38,7 @@ self.addEventListener('activate', evt => {
         .map(key => caches.delete(key))
       );
     })
+    location.reload(true)
   );
 });
 
