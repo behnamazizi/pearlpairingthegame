@@ -10,34 +10,16 @@ let ww, wh, timer_0, timer_1, timer_2,
 
 document.addEventListener('DOMContentLoaded', () => {
 
-
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js', {
-            scope: '/pearlpairingthegame/'
-        }).then(function (reg) {
-
-            if (reg.installing) {
-                console.log('Service worker installing');
-            } else if (reg.waiting) {
-                console.log('Service worker installed');
-            } else if (reg.active) {
-                console.log('Service worker active');
-            }
-
-        }).catch(function (error) {
-            // registration failed
-            console.log('Registration failed with ' + error);
-        });
+        navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('service worker registered'))
+            .catch(err => console.log('service worker not registered', err));
     }
-
-
-
-
-
 
     timer_2 = window.requestAnimationFrame(() => {
         getComputedStyle(document.body).getPropertyValue("width").slice(0, -2) != 0 ? setup() : ''
     })
+
 })
 window.addEventListener('resize', () => setup())
 
@@ -164,27 +146,27 @@ const addBtn = document.querySelector('.add-button');
 addBtn.style.display = 'none';
 
 window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  addBtn.style.display = 'block';
+    e.preventDefault();
+    deferredPrompt = e;
+    addBtn.style.display = 'block';
 
-  addBtn.addEventListener('click', () => {
-    // addBtn.style.display = 'none';
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then((choiceResult) => {
-      if (choiceResult.outcome === 'accepted') {
-        console.log('User accepted the A2HS prompt');
-      } else {
-        console.log('User dismissed the A2HS prompt');
-      }
-      deferredPrompt = null;
+    addBtn.addEventListener('click', () => {
+        // addBtn.style.display = 'none';
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted the A2HS prompt');
+            } else {
+                console.log('User dismissed the A2HS prompt');
+            }
+            deferredPrompt = null;
+        });
     });
-  });
 });
 
 window.addEventListener('appinstalled', () => {
     // addBtn.style.display = 'none';
-    document.querySelector('#additional').innerHTML+= `
+    document.querySelector('#additional').innerHTML += `
     #start{
         grid-template-columns: repeat(3, 1fr) .5fr 1fr;
     }
@@ -194,5 +176,4 @@ window.addEventListener('appinstalled', () => {
     `
     deferredPrompt = null;
     console.log('PWA was installed');
-  });
-  
+});
