@@ -11,11 +11,22 @@ let ww, wh, timer_0, timer_1, timer_2,
 document.addEventListener('DOMContentLoaded', () => {
 
 
-if('serviceWorker' in navigator){
-  navigator.serviceWorker.register('/sw.js',{scope: '/pearlpairingthegame/'})
-    .then(reg => console.log('service worker registered'))
-    .catch(err => console.log('service worker not registered', err));
-}
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js', {
+            scope: '/pearlpairingthegame/'
+        }).then(function (reg) {
+            if (reg.installing) {
+                console.log('Service worker installing');
+            } else if (reg.waiting) {
+                console.log('Service worker installed');
+            } else if (reg.active) {
+                console.log('Service worker active');
+            }
+
+        }).catch(function (error) {
+            console.log('Registration failed with ' + error);
+        });
+    }
 
 
 
